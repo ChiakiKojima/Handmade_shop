@@ -32,11 +32,12 @@ class ItemsController extends Controller
     public function store(ItemRequest $request) {
         //まずimage以外のpostデータを$dataに代入　imageは入ってこない
         $data = $request->validated();
+        //dd($data);
         if ($request->file('thefile')) {
-            //file名をオリジナルの名前に変換する(何もしないと自動で変換されてしまうので)
-            // $name = $request->file('thefile')->getClientOriginalName();
+            //file名にするための日時を取得
+            $file_name = date('Y-m-d H:i:s');
             //laravelにアップロードして保存
-            $temp_path = $request->file('thefile')->storeAs('public/images', $data['id'].'.jpeg');
+            $temp_path = $request->file('thefile')->storeAs('public/images', $file_name.'.jpeg');
             //読込先と保存先が異なるので、bladeで表示させるためのファイルパスに変換
             $read_path = str_replace('public/', 'storage/', $temp_path);
             //データベースにまとめて保存するため、配列に$read_path(imageファイルのパス)を追加
@@ -60,7 +61,7 @@ class ItemsController extends Controller
         $data = $request->validated();
         if ($request->file('thefile')) {
             File::delete($image);
-            $temp_path = $request->file('thefile')->storeAs('public/images', $item['id'].'.jpeg');
+            $temp_path = $request->file('thefile')->storeAs('public/images', $item['created_at'].'.jpeg');
             $read_path = str_replace('public/', 'storage/', $temp_path);
             $data['image'] = $read_path;
             // if ($image !== $read_path) {
