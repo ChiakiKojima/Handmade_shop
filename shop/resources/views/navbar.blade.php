@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container py-4">
     <!-- ブランド表示 -->
     <a class="navbar-brand" href="{{ route('home') }}">Handmade shop</a>
@@ -46,10 +46,7 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ route('getOrders') }}"><i class="fas fa-shopping-cart"></i></a>
           </li>
-          <li class="nav-item">
-            {{-- ④ --}}
-            <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
-          </li>
+          
           <!-- マイページ -->
           <li class="nav-item">
             <a class="nav-link" href="{{ route('mypage') }}"><i class="fas fa-user"></i></a>

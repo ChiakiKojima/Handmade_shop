@@ -83,7 +83,7 @@ class CartController extends Controller
             'city' => 'required|min:2',
             'no' => 'required|min:1'
         ]);
-        $receiver = \Request::all();  
+        //$receiver = \Request::all();  
         //dump($receiver);
         Session::put('receiver', $receiver);
         return view('cart.payment');
