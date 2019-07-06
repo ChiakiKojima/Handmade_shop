@@ -10,8 +10,9 @@
     <body>
         
         @include('navbar')
-        
+            
         @if(Route::currentRouteName() === 'home')
+             @include('flash::message')
             <img src="storage/top1.jpg" alt="top image" class="img-fluid">
         @endif
       

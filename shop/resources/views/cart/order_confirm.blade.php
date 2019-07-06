@@ -16,8 +16,8 @@
                 <table>
                     @for($i = 0; $i < $count; $i++)
                         <tr>
-                            <td name="items">{{ $items[$i]['item'] }}</td>
-                            <td name="price" class="text-danger">¥ {{ $items[$i]['price'] }}</td>
+                            <td name="items" class="pr-3">{{ $items[$i]['item'] }}</td>
+                            <td name="price" class="text-danger pr-3">¥ {{ $items[$i]['price'] }}</td>
                             <td>数量: {{ $items[$i]['num'] }}</td>
                         </tr>
                     @endfor

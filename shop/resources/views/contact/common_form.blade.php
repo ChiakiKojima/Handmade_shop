@@ -16,5 +16,5 @@
         {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
     </div>
     
-    {!! Form::submit('確認', ['class' => 'btn btn-primary form-control']) !!}
+    {!! Form::submit('確認', ['class' => 'btn btn-info form-control']) !!}
 {!! Form::close() !!}

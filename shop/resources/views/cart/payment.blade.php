@@ -19,7 +19,7 @@
         {{Form::radio('payment', 'cashon')}}代金引換
         </label>
     </div>
-    <div class="form-group">
+    <div class="form-group pt-3">
         {!! Form::submit('次へ進む', ['class' => 'btn btn-warning']) !!}
     </div>
     

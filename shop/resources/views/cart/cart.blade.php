@@ -4,7 +4,6 @@
 @section('content')
     
 <h1>ショッピングカート</h1>
-<a href="{{ action('ItemsController@index') }}" class="btn btn-secondary float-right">一覧へ戻る</a>
 
 @include('errors.form_errors')
 
@@ -47,7 +46,8 @@
             <div class="form-group">
                 {!! Form::submit('カートを空にする', ['class' => 'btn btn-outline-primary']) !!}
             </div>
+        {!! Form::close() !!}
     </div>
-{!! Form::close() !!}
+<a href="{{ action('ItemsController@index') }}" class="btn btn-secondary float-right">一覧へ戻る</a>
 
 @endsection

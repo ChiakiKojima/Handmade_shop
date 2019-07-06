@@ -29,7 +29,7 @@
     </table>
     
     {!! Form::open(['url' => '/send']) !!}
-      {!! Form::submit('送信', ['class' => 'btn btn-primary form-control']) !!}
+      {!! Form::submit('送信', ['class' => 'btn btn-info form-control']) !!}
     {!! Form::close() !!}
     
 

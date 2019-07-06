@@ -3,7 +3,6 @@
 
 @section('content')
 
-    @include('flash::message')
     <h1>Items</h1>
     <hr/>
 
