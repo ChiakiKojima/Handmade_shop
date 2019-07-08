@@ -6,6 +6,7 @@
 
 require('./bootstrap');
 require('./changeOrders');
+require('./zipcloud');
 
 window.Vue = require('vue');
 

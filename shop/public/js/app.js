@@ -49270,6 +49270,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./changeOrders */ "./resources/js/changeOrders.js");
 
+__webpack_require__(/*! ./zipcloud */ "./resources/js/zipcloud.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
@@ -49459,6 +49461,41 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/zipcloud.js":
+/*!**********************************!*\
+  !*** ./resources/js/zipcloud.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  $('#zip').on('click', function () {
+    //入力された郵便番号でWebAPIに住所情報をリクエスト
+    $.ajax({
+      url: "http://zipcloud.ibsnet.co.jp/api/search?zipcode=" + $('#postcode').val(),
+      dataType: 'jsonp'
+    }).done(function (data) {
+      if (data.results) {
+        //関数を呼び出す
+        setData(data.results[0]);
+      } else {
+        alert('該当するデータが見つかりませんでした');
+      }
+    }).fail(function (data) {
+      alert('通信に失敗しました');
+    });
+  }); //データ取得が成功した時の処理
+
+  function setData(data) {
+    //取得したデータを各HTML要素に代入
+    $('#prefecture').val(data.address1); //都道府県
+
+    $('#city').val(data.address2 + data.address3);
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -49477,8 +49514,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/ec2-user/environment/l_s_customer/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/ec2-user/environment/l_s_customer/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/ec2-user/environment/Handmade_shop/shop/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/Handmade_shop/shop/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
