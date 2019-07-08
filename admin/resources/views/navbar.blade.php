@@ -15,9 +15,7 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ route('home') }}">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('about') }}">About</a>
-        </li>
+        
       </ul>
  
       <!-- 右寄せメニュー -->
@@ -34,10 +32,6 @@
           </li>
         @else
           <!-- ログインしている時のメニュー -->
-          <li class="nav-item">
-            {{-- ④ --}}
-            <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
-          </li>
  
           <!-- ドロップダウンメニュー -->
           <li class="nav-item dropdown">
